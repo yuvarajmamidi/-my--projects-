@@ -1,3 +1,12 @@
+var colours =['#f78900','#897345','#901747'];
+var random_color=colours[Math.floor(Math.random()*colours.length)];
+document.getElementById('body').style.background=random_color;
+var colos =['#063701','#74729','#711247','#678333','#234','#456'];
+var rand_color=colos[Math.floor(Math.random()*colos.length)];
+document.getElementById('button').style.background=rand_color;
+var font =['50px','40px','30px'];
+document.getElementById('button').style.fontSize=font[Math.floor(Math.random()*font.length)];
+
 const button = document.querySelector("button");
 
 button.addEventListener("click", ()=>{
@@ -33,3 +42,4 @@ function onError(error){
     }
     button.setAttribute("disabled", "true");
 }
+
