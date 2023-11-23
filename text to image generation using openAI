@@ -1,0 +1,21 @@
+import requests
+from openai import OpenAI
+client = OpenAI()
+#key is set as environment variable and openai access it default
+
+x=input("what kind of picture you need: ")
+response = client.images.generate(
+  model="dall-e-3",
+  prompt=x,
+  size="1024x1024",
+  quality="hd",
+  n=1,
+)
+image_url = response.data[0].url
+url=image_url
+f=open("image.jpg",'wb')
+response=requests.get(url,headers={"Accept":"Application/json"})
+
+f.write(response.content)
+
+
